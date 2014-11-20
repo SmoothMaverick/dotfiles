@@ -1,0 +1,99 @@
+[submodule ".vim/bundle/tmuxline.vim"]
+	path = .vim/bundle/tmuxline.vim
+	url = git://github.com/edkolev/tmuxline.vim
+[submodule ".vim/bundle/ag.vim"]
+	path = .vim/bundle/ag.vim
+	url = git://github.com/rking/ag.vim
+[submodule "nerdtree"]
+	path = nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "tabular"]
+	path = tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "tcomment_vim"]
+	path = tcomment_vim
+	url = git://github.com/tomtom/tcomment_vim.git
+[submodule "vim-surround"]
+	path = vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "syntastic"]
+	path = syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim-colorschemes"]
+	path = vim-colorschemes
+	url = git://github.com/flazz/vim-colorschemes.git
+[submodule "ag.vim"]
+	path = ag.vim
+	url = git://github.com/rking/ag.vim
+[submodule "supertab"]
+	path = supertab
+	url = git://github.com/ervandew/supertab
+[submodule "ultisnips"]
+	path = ultisnips
+	url = git://github.com/SirVer/ultisnips.git
+[submodule "vim-snippets"]
+	path = vim-snippets
+	url = git://github.com/honza/vim-snippets.git
+[submodule "vim-easymotion"]
+	path = vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion
+[submodule "delimitMate"]
+	path = delimitMate
+	url = git://github.com/Raimondi/delimitMate
+[submodule "lightline.vim"]
+	path = lightline.vim
+	url = git://github.com/itchyny/lightline.vim
+[submodule "tmuxline.vim"]
+	path = tmuxline.vim
+	url = git://github.com/edkolev/tmuxline.vim
+[submodule "vim-fugitive"]
+	path = vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/tcomment_vim"]
+	path = .vim/bundle/tcomment_vim
+	url = git://github.com/tomtom/tcomment_vim.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/vim-colorschemes"]
+	path = .vim/bundle/vim-colorschemes
+	url = git://github.com/flazz/vim-colorschemes.git
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = git://github.com/ervandew/supertab
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/vim-snippets"]
+	path = .vim/bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
+[submodule ".vim/bundle/vim-easymotion"]
+	path = .vim/bundle/vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion
+[submodule ".vim/bundle/delimitMate"]
+	path = .vim/bundle/delimitMate
+	url = git://github.com/Raimondi/delimitMate
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
+	url = git://github.com/itchyny/lightline.vim
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
