@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# finish writing help section
+
+DOT_DIR="$HOME/git/dotfiles"
+
+print_help() {
+  echo 'USAGE: dotsync [OPTION] [ARGUMENT]'
+  echo '-s, --sync         sync dotfiles'
+  echo '-h, --help         print help'
+  exit 0
+}
+
+print_error() {
+  local prog=$(basename $0)
+  echo -e "$prog:ERROR: $*">&2
+  exit 1
+}
+
+sync_dotfiles() {
+  if git submodule status | grep -q "^-" ; then
+    print_error "submodules need to be initialized (dotsync -c)"
+  fi
+  case $1 in
+    vim)  sync_files=".vimrc .vim"
+    ;;
+    tmux) sync_files=".tmux.conf"
+    ;;
+    zsh)  sync_files=".zshrc .zshenv"
+    ;;
+    all)  sync_files=".vimrc .vim .tmux.conf .tmux .zshrc .zshenv"
+    ;;
+    *) print_help
+  esac
+
+  for file in $sync_files; do
+    rsync -a --delete \
+      "$DOT_DIR/$file" "$HOME"
+  done
+}
+
+check_argument() {
+  if [ "$SYNC" = "TRUE" ] ; then
+    sync_dotfiles "$FILE"
+  else
+    print_help
+  fi
+}
+
+[ $# -eq 0 -o $# -gt 2 ] && print_help
+
+cd "$DOT_DIR"
+while [ $# -gt 0 ] ; do
+  case $1 in
+    -s|--sync)   SYNC=TRUE
+    ;;
+    -h|--help) print_help
+    ;;
+    *) FILE="$1"
+    ;;
+  esac
+  shift
+done
+
+check_argument
