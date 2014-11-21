@@ -1,0 +1,32 @@
+#!/bin/sh
+
+ARG_CPU=FALSE
+ARG_MEM=FALSE
+
+if [ -z $1 ] ; then
+  ARG_CPU=TRUE
+  ARG_MEM=TRUE
+fi
+
+while [ $# -gt 0 ] ; do
+  case $1 in
+    --cpu|-c) ARG_CPU=TRUE
+    ;;
+    --mem|-m) ARG_MEM=TRUE
+    ;;
+    *) echo "error" >&2
+       exit 1
+    ;;
+  esac
+  shift
+done
+
+if [ $ARG_CPU = TRUE ] ; then
+  CPU=$(top -bn1 | grep '%Cpu' | awk '{print $2}')
+  echo "cpu ${CPU}%"
+fi
+
+if [ $ARG_MEM = TRUE ] ; then
+  MEM=$(free | grep Mem | awk '{printf("%.1f\n", $3/$2 * 100)}')
+  echo "mem ${MEM}%"
+fi
