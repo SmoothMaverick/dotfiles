@@ -2,6 +2,7 @@
 
 ARG_CPU=FALSE
 ARG_MEM=FALSE
+UNAME=$(uname)
 
 if [ -z $1 ] ; then
   ARG_CPU=TRUE
@@ -21,10 +22,13 @@ while [ $# -gt 0 ] ; do
   shift
 done
 
-if [ $ARG_CPU = TRUE ] ; then
-  top -bn1 | awk '/Cpu\(s\):/{gsub(/[^0-9. ]/,"");printf("C %.1f%%\n", 100-$4)}'
-fi
-
-if [ $ARG_MEM = TRUE ] ; then
-  top -bn1 | awk '/Mem:/{gsub(/[^0-9 ]/,"");printf("M %.1f%%\n",$2/$1*100)}'
+if [ $UNAME = 'Linux' ] ; then
+  if [ $ARG_CPU = TRUE ] ; then
+    top -bn1 | awk '/Cpu\(s\):/{gsub(/[^0-9. ]/,"");printf("C %.1f%%\n", 100-$4)}'
+  fi
+  if [ $ARG_MEM = TRUE ] ; then
+    top -bn1 | awk '/Mem:/{gsub(/[^0-9 ]/,"");printf("M %.1f%%\n",$2/$1*100)}'
+  fi
+elif [ $UNAME = 'Darwin' ] ; then
+  echo "write code for OSX"
 fi
