@@ -1,5 +1,3 @@
-"let g:tmuxline_powerline_separators = 0
-
 let g:git_sym = ''
 let g:roy_sym = ''
 let g:sep_l = ''
@@ -50,11 +48,11 @@ endfunction
 
 function! MyFugitive()
   if exists("*fugitive#head")
+    let _ = fugitive#head()
     if winwidth(0) > 70
-      let _ = fugitive#head()
       return strlen(_) ? (g:git_sym)._ : ''
     else
-      return (g:git_sym)
+      return strlen(_) ? (g:git_sym) : ''
     endif
   endif
   return ''
