@@ -22,11 +22,9 @@ while [ $# -gt 0 ] ; do
 done
 
 if [ $ARG_CPU = TRUE ] ; then
-  CPU=$(top -bn1 | grep '%Cpu' | awk '{print $2}')
-  echo "cpu ${CPU}%"
+  top -bn1 | awk '/Cpu\(s\):/{gsub(/[^0-9. ]/,"");printf("cpu:%.1f%%\n", 100-$4)}'
 fi
 
 if [ $ARG_MEM = TRUE ] ; then
-  MEM=$(free | grep Mem | awk '{printf("%.1f\n", $3/$2 * 100)}')
-  echo "mem ${MEM}%"
+  top -bn1 | awk '/Mem:/{gsub(/[^0-9 ]/,"");printf("mem:%.1f%%\n",$2/$1*100)}'
 fi
