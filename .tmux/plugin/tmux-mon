@@ -22,12 +22,57 @@ while [ $# -gt 0 ] ; do
   shift
 done
 
-if [ $UNAME = 'Linux' ] ; then
-  if [ $ARG_CPU = TRUE ] ; then
-    top -bn1 | awk '/Cpu\(s\):/{gsub(/[^0-9. ]/,"");printf("C %.1f%%\n", 100-$4)}'
+top1="$(top -bn1 | head -n5)"
+tmux_out=$(tmux list-windows)
+tmux_width=$( echo "$tmux_out" | awk '/active/{match($5,/[0-9]+[^x]/,a);print a[0]}')
+tmux_windows=$( echo "$tmux_out" | tail -n1 | awk '{sub(/:/,"");print $1}')
+
+set_fmt() {
+  local arg=$1
+  if [ $arg = 'blank' ] ; then
+    unset top1
+  elif [ $arg = 'short' ] ; then
+    cpu_fmt=''
+    mem_fmt=''
+  else
+    cpu_fmt='cpu:'
+    mem_fmt='mem:'
   fi
-  if [ $ARG_MEM = TRUE ] ; then
-    top -bn1 | awk '/Mem:/{gsub(/[^0-9 ]/,"");printf("M %.1f%%\n",$2/$1*100)}'
+}
+
+if [ $tmux_width -lt 60 ] ; then
+  set_fmt 'blank'
+elif [ $tmux_width -lt 70 ] ; then
+  if [ $tmux_windows -gt 2 ] ; then
+    set_fmt 'blank'
+  else
+    set_fmt 'short'
+  fi
+elif [ $tmux_width -lt 80 ] ; then
+  if [ $tmux_windows -gt 5 ] ; then
+    set_fmt 'blank'
+  elif [ $tmux_windows -gt 3 ] ; then
+    set_fmt 'short'
+  else
+    set_fmt
+  fi
+else
+  set_fmt
+fi
+
+if [ $UNAME = 'Linux' ] ; then
+  cpu_out=$(echo "$top1" | awk '/Cpu\(s\):/{gsub(/[^0-9. ]/,"");print(100-$4)}')
+  mem_out=$(echo "$top1" | awk '/Mem ?:/{gsub(/[^0-9 ]/,"");print($3/$1*100)}')
+
+  if [ "$ARG_CPU" = TRUE ] && [ "$ARG_MEM" = TRUE ] && [ -n "$top1" ] ; then
+    printf " $cpu_fmt%.0f%% | $mem_fmt%.0f%% \n" "$cpu_out" "$mem_out"
+
+  elif [ "$ARG_CPU" = TRUE ] && [ -n "$top1" ] ; then
+    printf "$cpu_fmt%.0f%%\n" "$cpu_out"
+
+  elif [ "$ARG_MEM" = TRUE ] && [ -n "$top1" ] ; then
+    printf "$mem_fmt%.0f%%\n" "$mem_out"
+
   fi
 elif [ $UNAME = 'Darwin' ] ; then
   echo "write code for OSX"
