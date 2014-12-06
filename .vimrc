@@ -19,6 +19,7 @@ set ignorecase
 set t_Co=256
 set laststatus=2
 set cursorline
+set colorcolumn=80
 highlight CursorLine   cterm=none ctermfg=none  ctermbg=none
 highlight CursorLineNr cterm=none ctermfg=11  ctermbg=none
 syntax on
