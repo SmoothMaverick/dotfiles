@@ -55,6 +55,6 @@ nnoremap <C-\> :NERDTreeFind<CR>
 
 " xclip
 if filereadable('/usr/bin/xclip')
-  vmap <silent> y y :'<,'>w !xclip -selection c<CR><CR>
-  nnoremap <silent> yp :r !xclip -selection c -o<CR><CR>
+  vnoremap <C-y> :'<,'>w !xclip -selection c<CR><CR>
+  nnoremap <C-y> :r !xclip -selection c -o<CR><CR>
 endif
