@@ -50,7 +50,8 @@ vmap ,{ c{<C-R>"}<ESC>
 map ,` ysiw`
 
 " NERDTree
-nnoremap <silent> \ :NERDTreeToggle<CR>
+nnoremap \     :NERDTreeToggle<CR>
+nnoremap <C-\> :NERDTreeFind<CR>
 
 " xclip
 if filereadable('/usr/bin/xclip')
