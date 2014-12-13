@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# finish writing help section
+# add a config file to supply the dotfiles directory
+
+print_help() {
+  echo 'print help section here'
+  echo '(to be written)'
+  exit 0
+}
+
+print_error() {
+  local prog=$(basename $0)
+  echo -e "$prog:ERROR: $*">&2
+  exit 1
+}
+
+sync_dotfiles() {
+  [ -z $1 ] && print_error "provide an argument for syncing"
+  case $1 in
+    vim)  sync_files=".vimrc .vim"
+    ;;
+    tmux) sync_files=".tmux.conf .tmux"
+    ;;
+    zsh)  sync_files=".zshrc .zshenv .zprofile"
+    ;;
+    all)  sync_files=".vimrc .vim .tmux.conf .tmux \
+                      .zshrc .zshenv .zprofile"
+    ;;
+  esac
+
+  for file in $sync_files; do
+    rsync -a --delete \
+      "$HOME/git/dotfiles/$file" "$HOME"
+  done
+}
+
+pull_updates() {
+  cd $HOME/git/dotfiles
+  git pull
+}
+
+[ $# -eq 0 -o $# -gt 2 ] && print_help
+
+case $1 in
+  -s|--sync)   sync_dotfiles $2
+  ;;
+  -u|--update) pull_updates
+  ;;
+  -h|--help|*) print_help
+  ;;
+esac
