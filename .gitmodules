@@ -37,9 +37,6 @@
 [submodule "vim-snippets"]
 	path = vim-snippets
 	url = git://github.com/honza/vim-snippets.git
-[submodule "vim-easymotion"]
-	path = vim-easymotion
-	url = git://github.com/Lokaltog/vim-easymotion
 [submodule "delimitMate"]
 	path = delimitMate
 	url = git://github.com/Raimondi/delimitMate
