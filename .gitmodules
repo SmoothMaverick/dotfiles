@@ -4,51 +4,6 @@
 [submodule ".vim/bundle/ag.vim"]
 	path = .vim/bundle/ag.vim
 	url = git://github.com/rking/ag.vim
-[submodule "nerdtree"]
-	path = nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "tabular"]
-	path = tabular
-	url = git://github.com/godlygeek/tabular.git
-[submodule "tcomment_vim"]
-	path = tcomment_vim
-	url = git://github.com/tomtom/tcomment_vim.git
-[submodule "vim-surround"]
-	path = vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "ctrlp.vim"]
-	path = ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
-[submodule "syntastic"]
-	path = syntastic
-	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim-colorschemes"]
-	path = vim-colorschemes
-	url = git://github.com/flazz/vim-colorschemes.git
-[submodule "ag.vim"]
-	path = ag.vim
-	url = git://github.com/rking/ag.vim
-[submodule "supertab"]
-	path = supertab
-	url = git://github.com/ervandew/supertab
-[submodule "ultisnips"]
-	path = ultisnips
-	url = git://github.com/SirVer/ultisnips.git
-[submodule "vim-snippets"]
-	path = vim-snippets
-	url = git://github.com/honza/vim-snippets.git
-[submodule "delimitMate"]
-	path = delimitMate
-	url = git://github.com/Raimondi/delimitMate
-[submodule "lightline.vim"]
-	path = lightline.vim
-	url = git://github.com/itchyny/lightline.vim
-[submodule "tmuxline.vim"]
-	path = tmuxline.vim
-	url = git://github.com/edkolev/tmuxline.vim
-[submodule "vim-fugitive"]
-	path = vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
