@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = git://github.com/ervandew/supertab
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
-	url = git://github.com/SirVer/ultisnips.git
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
@@ -49,3 +46,12 @@
 [submodule ".tmux/plugin/tmux-resurrect"]
 	path = .tmux/plugin/tmux-resurrect
 	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule ".vim/bundle/tlib_vim"]
+	path = .vim/bundle/tlib_vim
+	url = git@github.com:tomtom/tlib_vim.git
+[submodule ".vim/bundle/vim-addon-mw-utils"]
+	path = .vim/bundle/vim-addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/vim-snipmate"]
+	path = .vim/bundle/vim-snipmate
+	url = git@github.com:garbas/vim-snipmate.git
