@@ -3,6 +3,8 @@
 # finish writing help section
 # add a config file to supply the dotfiles directory
 
+DOT_DIR="$HOME/git/dotfiles"
+
 print_help() {
   echo 'print help section here'
   echo '(to be written)'
@@ -31,17 +33,17 @@ sync_dotfiles() {
 
   for file in $sync_files; do
     rsync -a --delete \
-      "$HOME/git/dotfiles/$file" "$HOME"
+      "$DOT_DIR/$file" "$HOME"
   done
 }
 
 pull_updates() {
-  cd $HOME/git/dotfiles
   git pull
 }
 
 [ $# -eq 0 -o $# -gt 2 ] && print_help
 
+cd "$DOT_DIR"
 case $1 in
   -s|--sync)   sync_dotfiles $2
   ;;
