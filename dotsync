@@ -42,6 +42,7 @@ sync_dotfiles() {
 
 pull_updates() {
   git pull
+  git submodule update --recursive
 }
 
 [ $# -eq 0 -o $# -gt 2 ] && print_help
