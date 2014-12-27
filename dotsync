@@ -19,6 +19,9 @@ print_error() {
 
 sync_dotfiles() {
   [ -z $1 ] && print_error "provide an argument for syncing"
+  if git submodule status | grep -q "^-" ; then
+    git submodule update --init
+  fi
   case $1 in
     vim)  sync_files=".vimrc .vim"
     ;;
