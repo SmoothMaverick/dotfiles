@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # finish writing help section
-# add a config file to supply the dotfiles directory
 
 DOT_DIR="$HOME/git/dotfiles"
 
@@ -20,7 +19,7 @@ print_error() {
 sync_dotfiles() {
   [ -z $1 ] && print_error "provide an argument for syncing"
   if git submodule status | grep -q "^-" ; then
-    git submodule update --init
+    print_error "submodules need to be initialized (dotsync -c)"
   fi
   case $1 in
     vim)  sync_files=".vimrc .vim"
@@ -40,6 +39,10 @@ sync_dotfiles() {
   done
 }
 
+clone_submodules() {
+  git submodule update --init
+}
+
 pull_updates() {
   git pull
   git submodule update --recursive
@@ -52,6 +55,8 @@ case $1 in
   -s|--sync)   sync_dotfiles $2
   ;;
   -u|--update) pull_updates
+  ;;
+  -c|--clone) clone_submodules
   ;;
   -h|--help|*) print_help
   ;;
