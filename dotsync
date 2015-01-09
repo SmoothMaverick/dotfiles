@@ -17,7 +17,6 @@ print_error() {
 }
 
 sync_dotfiles() {
-  [ -z $1 ] && print_error "provide an argument for syncing"
   if git submodule status | grep -q "^-" ; then
     print_error "submodules need to be initialized (dotsync -c)"
   fi
@@ -31,6 +30,7 @@ sync_dotfiles() {
     all)  sync_files=".vimrc .vim .tmux.conf .tmux \
                       .zshrc .zshenv .zprofile"
     ;;
+    *) print_help
   esac
 
   for file in $sync_files; do
@@ -48,16 +48,31 @@ pull_updates() {
   git submodule update --recursive
 }
 
+check_argument() {
+  if [ "$SYNC" = "TRUE" ] ; then
+    sync_dotfiles "$FILE"
+  else
+    print_help
+  fi
+}
+
 [ $# -eq 0 -o $# -gt 2 ] && print_help
 
 cd "$DOT_DIR"
-case $1 in
-  -s|--sync)   sync_dotfiles $2
-  ;;
-  -u|--update) pull_updates
-  ;;
-  -c|--clone) clone_submodules
-  ;;
-  -h|--help|*) print_help
-  ;;
-esac
+while [ $# -gt 0 ] ; do
+  case $1 in
+    -s|--sync)   SYNC=TRUE
+    ;;
+    -u|--update) pull_updates
+    ;;
+    -c|--clone) clone_submodules
+    ;;
+    -h|--help) print_help
+    ;;
+    *) FILE="$1"
+    ;;
+  esac
+  shift
+done
+
+check_argument
