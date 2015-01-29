@@ -5,8 +5,11 @@
 DOT_DIR="$HOME/git/dotfiles"
 
 print_help() {
-  echo 'print help section here'
-  echo '(to be written)'
+  echo 'USAGE: dotsync [OPTION] [ARGUMENT]'
+  echo '-s, --sync         sync dotfiles'
+  echo '-c, --clone        clone submodules'
+  echo '-u, --update       pull updates'
+  echo '-h, --help         print help'
   exit 0
 }
 
