@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # finish writing help section
+# test stuff
 
 DOT_DIR="$HOME/git/dotfiles"
 
