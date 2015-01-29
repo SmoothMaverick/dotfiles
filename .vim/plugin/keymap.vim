@@ -17,6 +17,9 @@ nnoremap K gt
 nnoremap H <c-b>
 nnoremap L <c-f>
 
+" Join lines (remap default)
+nnoremap <leader>l J
+
 "Clear current search highlight
 nmap <silent> // :nohlsearch<CR>
 
