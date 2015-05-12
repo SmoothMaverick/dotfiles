@@ -67,7 +67,7 @@ alias ll='ls -lGh --color=auto'
 alias ls='ls -Gh --color=auto'
 
 # hub
-if [ $(which hub) ] ; then
+if [ -x $(which hub) ] ; then
   alias git='hub'
 fi
 
