@@ -90,7 +90,7 @@ setprompt() {
       eval PR_USER_OP='%#$'
    fi
    # set the prompt
-   PS1=$'[%T][%n@%m][%1~]\n${PR_USER_OP} '
+   PS1=$'\[%T\]\[%n@%m\]\[%1~\]\n${PR_USER_OP} '
    PS2=$'%_>'
    RPROMPT=$'${vcs_info_msg_0_}'
 }
