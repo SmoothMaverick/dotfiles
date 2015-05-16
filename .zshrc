@@ -25,7 +25,6 @@ SAVEHIST=1000
 # Variables
 #------------------------------
 
-export BROWSER="firefox"
 export EDITOR="vim"
 
 #------------------------------
