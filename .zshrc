@@ -95,4 +95,7 @@ setprompt() {
 }
 setprompt
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting
+if [ -d "$HOME/.rvm" ] ; then
+  export PATH="$PATH:$HOME/.rvm/bin"
+fi
