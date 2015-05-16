@@ -77,7 +77,7 @@ autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git hg
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats "%{${PR_CYAN}%}[%{${PR_YELLOW}%}%m%u%c%{${PR_WHITE}%}${git_sym}%b%{${PR_CYAN}%}]%{$reset_color%}"
+zstyle ':vcs_info:git*' formats "%b${git_sym}%m%u%c"
 
 setprompt() {
    # load some modules
@@ -89,9 +89,9 @@ setprompt() {
       eval PR_USER_OP='%#$'
    fi
    # set the prompt
-   PS1=$'\[%T\]\[%n@%m\]\[%1~\]\n${PR_USER_OP} '
+   PS1=$'\[%T\]\[%n@%m\]\[%1~\] ${vcs_info_msg_0_}\n${PR_USER_OP} '
    PS2=$'%_>'
-   RPROMPT=$'${vcs_info_msg_0_}'
+   RPROMPT=$''
 }
 setprompt
 
