@@ -56,8 +56,8 @@ alias psg="ps aux | grep "
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h'
-alias ll='ls -lGh --color=auto'
-alias ls='ls -Gh --color=auto'
+alias ll='ls -lGh'
+alias ls='ls -Gh'
 
 # hub
 if [ -x $(which hub) ] ; then
