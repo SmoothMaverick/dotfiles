@@ -112,6 +112,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'szw/vim-tags'
 
 call vundle#end()
 filetyp plugin indent on
