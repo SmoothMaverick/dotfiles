@@ -87,6 +87,13 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" ================ VimDiff ========================
+
+highlight DiffAdd cterm=none ctermbg=Green gui=none guibg=Green
+highlight DiffDelete cterm=none ctermbg=Red gui=none guibg=Red
+highlight DiffChange cterm=none ctermbg=111 gui=none guibg=111
+highlight DiffText cterm=none ctermbg=Magenta gui=none guibg=Magenta
+
 " ================ Pathogen ========================
 
 " set the runtime path to include Vundle and initialize
