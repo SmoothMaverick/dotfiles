@@ -85,6 +85,7 @@ alias gad='git add'
 alias gpc='git add -p'
 alias gdf='git diff'
 alias gds='git diff --staged'
+alias gbr='git branch'
 
 # Common shell functions
 alias less='less -r'
