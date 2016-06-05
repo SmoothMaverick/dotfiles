@@ -56,8 +56,6 @@ map ,` ysiw`
 nnoremap \     :NERDTreeToggle<CR>
 nnoremap <C-\> :NERDTreeFind<CR>
 
-" xclip
-if filereadable('/usr/bin/xclip')
-  vnoremap <C-y> :'<,'>w !xclip -selection c<CR><CR>
-  nnoremap <C-y> :r !xclip -selection c -o<CR><CR>
-endif
+" copy/paste with registers
+vnoremap Y "*y<CR>
+
