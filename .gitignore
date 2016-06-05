@@ -7,3 +7,5 @@
 # Ignore backup files
 /*vim/backups
 /*vim/.netrwhist
+
+.DS_Store
