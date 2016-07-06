@@ -9,3 +9,7 @@ autocmd FileType python
 
 autocmd FileType go
  \ setlocal shiftwidth=4 softtabstop=4 tabstop=4
+
+" associate Dockerfile.* with dockerfile filetype
+au BufRead,BufNewFile "^Dockerfile.*$" set filetype=Dockerfile
+
