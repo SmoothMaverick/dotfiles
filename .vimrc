@@ -120,6 +120,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'szw/vim-tags'
+Plugin 'lfilho/cosco.vim'
 
 call vundle#end()
 filetyp plugin indent on
