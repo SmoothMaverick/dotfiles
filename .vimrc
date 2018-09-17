@@ -148,6 +148,7 @@ let g:go_fmt_command = "goimports"
 
 " call neomake when writing a buffer
 "call neomake#configure#automake('w')
+let g:neomake_javascript_enabled_makers = ['semistandard']
 
 colorscheme default
 let g:lightline = {'colorscheme': 'wombat'}
