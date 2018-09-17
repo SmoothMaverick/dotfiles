@@ -27,8 +27,6 @@ call dein#add('Lokaltog/vim-easymotion')
 call dein#add('Raimondi/delimitMate')
 call dein#add('itchyny/lightline.vim')
 call dein#add('szw/vim-tags')
-call dein#add('t9md/vim-chef')
-call dein#add('ngmy/vim-rubocop')
 call dein#add('lfilho/cosco.vim')
 call dein#add('fatih/vim-go')
 call dein#add('whatyouhide/vim-gotham')
@@ -143,9 +141,6 @@ set updatetime=200
 
 " show quick-fix window
 let g:neomake_open_list = 2
-
-" neomake's rubocop settings
-let g:neomake_ruby_rubocop_maker = {'args':['--format', 'emacs', '-l']}
 
 " automatically use go imports
 let g:go_fmt_command = "goimports"
