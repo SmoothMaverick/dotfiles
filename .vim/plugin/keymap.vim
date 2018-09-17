@@ -56,6 +56,8 @@ map ,` ysiw`
 nnoremap \     :NERDTreeToggle<CR>
 nnoremap <C-\> :NERDTreeFind<CR>
 
+" TagBar
+nnoremap +     :Tagbar<CR>
+
 " copy/paste with registers
 vnoremap Y "*y<CR>
-

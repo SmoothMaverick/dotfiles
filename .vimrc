@@ -31,6 +31,7 @@ call dein#add('lfilho/cosco.vim')
 call dein#add('fatih/vim-go')
 call dein#add('whatyouhide/vim-gotham')
 call dein#add('mhinz/vim-startify')
+call dein#add('majutsushi/tagbar')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('neomake/neomake')
 
