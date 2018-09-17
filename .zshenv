@@ -45,6 +45,9 @@ cdpath=(
 # Aliases
 #
 
+# neovim
+alias vi='nvim'
+
 # mistaken often
 alias sl='ls'
 alias dc='cd'
