@@ -16,7 +16,7 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-obsession')
-call dein#add('ctrlp.vim')
+call dein#add('vim-scripts/ctrlp.vim')
 call dein#add('junegunn/fzf')
 call dein#add('ervandew/supertab')
 call dein#add('honza/vim-snippets')
@@ -148,6 +148,8 @@ let g:go_fmt_command = "goimports"
 
 " call neomake when writing a buffer
 "call neomake#configure#automake('w')
+call neomake#configure#automake('w')
+
 let g:neomake_javascript_enabled_makers = ['semistandard']
 
 colorscheme default
