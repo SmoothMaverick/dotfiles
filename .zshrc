@@ -3,7 +3,7 @@
 #
 
 #------------------------------
-#Keybindings
+# Keybindings
 #------------------------------
 
 # Use vi key bindings
@@ -12,20 +12,6 @@ bindkey -v
 # The string may begin with ^ to anchor the search to the beginning of the line.
 bindkey '^r' history-incremental-search-backward
 bindkey '^?' backward-delete-char
-
-#------------------------------
-# History stuff
-#------------------------------
-
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-#------------------------------
-# Variables
-#------------------------------
-
-export EDITOR="vim"
 
 #------------------------------
 # Comp stuff
@@ -94,8 +80,8 @@ setprompt() {
    RPROMPT=$''
 }
 setprompt
-
 # Add RVM to PATH for scripting
 if [ -d "$HOME/.rvm" ] ; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
+

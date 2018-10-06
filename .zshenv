@@ -2,29 +2,34 @@
 # Defines environment variables.
 #
 
-#
-# Editors
-#
+#------------------------------
+# History stuff
+#------------------------------
 
-export EDITOR='vim'
-export VISUAL='vim'
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+
+#------------------------------
+# Editors
+#------------------------------
+
+export EDITOR='vi'
+export VISUAL='vi'
 export PAGER='less'
 
-#
-# History
-#
 
-#
+#------------------------------
 # Language
-#
+#------------------------------
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
 
-#
+#------------------------------
 # Paths
-#
+#------------------------------
 
 typeset -gU cdpath fpath mailpath path
 
@@ -41,12 +46,9 @@ cdpath=(
   $cdpath
 )
 
-#
+#------------------------------
 # Aliases
-#
-
-# neovim
-alias vi='nvim'
+#------------------------------
 
 # mistaken often
 alias sl='ls'
@@ -62,10 +64,14 @@ alias du='du -h'
 alias ll='ls -lGh'
 alias ls='ls -Gh'
 
-# hub
-if [ -x $(which hub) ] ; then
-  alias git='hub'
-fi
+# Common shell functions
+alias less='less -r'
+alias tf='tail -f'
+alias l='less'
+alias lh='ls -alt | head' # see the last modified files
+alias lsg='ll | grep'
+alias cl='clear'
+alias ..='cd ..'
 
 # git
 alias gs='git status'
@@ -90,18 +96,19 @@ alias gdf='git diff'
 alias gds='git diff --staged'
 alias gbr='git branch'
 
-# Common shell functions
-alias less='less -r'
-alias tf='tail -f'
-alias l='less'
-alias lh='ls -alt | head' # see the last modified files
-alias lsg='ll | grep'
-alias cl='clear'
-alias ..='cd ..'
+# neovim
+if [ -x $(which nvim) ] ; then
+  alias vi='nvim'
+fi
 
-#
+# hub
+if [ -x "$(which hub)" ] ; then
+  alias git='hub'
+fi
+
+#------------------------------
 # Temporary Files
-#
+#------------------------------
 
 if [[ ! -d "$TMPDIR" ]]; then
   export TMPDIR="/tmp/$USER"
